@@ -1,11 +1,11 @@
 /*
 Description:
 -----------
-This query extracts sales data from various views to calculate RFM metrics (Recency, Frequency, Monetary)
+This query extracts sales data from various views/tables to calculate RFM metrics (Recency, Frequency, Monetary)
 for retail customers. It performs the following steps:
   - Joins multiple data sources including Sales, Sales Customer Facts, Department, Date, Retail Transaction, 
     and Sales Table views.
-  - Filters for retail transactions where the customer's phone is not null.
+  - Filters for retail transactions where the Division is Retail
   - Calculates:
       * Recency: Days since the last purchase.
       * Frequency: Total number of purchases.
