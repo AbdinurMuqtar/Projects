@@ -2,7 +2,7 @@
  * Project: Store Traffic Analysis
  *
  * Problem:
- * The camera systems across several stores in multiple regions capture foot traffic data 
+ * The camera systems from several stores in multiple regions capture foot traffic data 
  * Issues such as cameras being off (leading to missing or low traffic data), 
  * light reflections, and double counting (or miscounting carts) result in high % of the data being affected.
  *
