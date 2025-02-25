@@ -135,7 +135,7 @@ CALCULATION AS (
         AND SalesData.Hour_sk = Traffic.[DVRHour_Nbr]
     WHERE 
         [Territory] IN ('North Region', 'South Region')
-----------------------Filter to Store Open Hours ---------------------------------------------------------
+---Filter to Store Open Hours 
         AND SalesData.Hour_sk BETWEEN 7 AND 21
 ),
 
@@ -231,7 +231,7 @@ ENDED AS (
         ---------- Calculate Normalized Traffic from Transaction and Normalized Conversion: Traffic = Transaction / Conversion--------------------------------------------------------------------------
         Transactions / NormalizedConversion AS NormalizedTraffic
     FROM NormalizedConv
-    -- WHERE [Tran_Dt_Sk] = 20210808 AND Department_sk = 150
+    -- WHERE [Tran_Dt_Sk] >= 20220801
 )
 
 ----------------------Final data output---------------------------------------------------
