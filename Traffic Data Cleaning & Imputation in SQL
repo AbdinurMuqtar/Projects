@@ -42,9 +42,9 @@ WITH Traffic AS (
                 [Store]
             ORDER BY (SELECT 0)
         ) AS RowNum
-    FROM ods.Traffic_Vw Traffic
+    FROM Traffic_Vw Traffic
     WHERE 
-        [DVR_Dt_Sk] = 20240824 -- ----20190728 ---20210808
+        [DVR_Dt_Sk] >= 20220801
         AND [DVRHour_Nbr] BETWEEN 7 AND 21
 ),
 
@@ -79,10 +79,10 @@ SalesData AS (
             ELSE -6666
         END AS Hour_sk,
         COUNT(DISTINCT [Transaction ID]) AS Transactions
-    FROM [Cubes].[Sales_Vw] Sales
-    LEFT JOIN [Cube_Sales].[Department_Vw] Department 
+    FROM [Sales_Vw] Sales
+    LEFT JOIN [Department_Vw] Department 
         ON Sales.[Department_Sk] = Department.[Department_Sk]
-    LEFT JOIN [Cube_Sales].[Date_Vw] Dates 
+    LEFT JOIN [Date_Vw] Dates 
         ON Sales.[Tran_Dt_Sk] = Dates.[Date_Sk]
     WHERE 
         [Tran_Dt_Sk] >= 20220801 
